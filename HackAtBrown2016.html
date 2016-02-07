@@ -1,17 +1,141 @@
-<head>
-  <title>Designeur</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-          </link>
-</head>
+  <head>
+    <!-- Page Title -->
+    <title>Designeur | Designs Into Making</title>
 
-<body>
-    <div class="container">
+    <!-- Handles character encoding -->
+    <!-- <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1"> -->
 
-  <h1>Welcome to Design Space!</h1>
-  {{> addAdvertForm}}
-  {{> home}} <!-- This inserts everything in the template named "home" here! -->
- </div>
-</body>
+    <!-- Linking the CSS stylesheets -->
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    
+    <!-- ??? Emma's stylesheet ??? -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  	  <!-- SmoothScroll.js scripts -->
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  </head>
+
+
+  <body>
+
+    <!-- TOP BAR HTML -->    
+    <div class="navbar transparent  navbar-default navbar-fixed-top">
+    <nav class="navbar-inner" >
+      <div class="container">
+        <a class="pull-left smoothScroll" href="#section1"><img src="media/logo.png"/></a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="smoothScroll" href="#section3"><button type="button" class="btn btn-primary">Login</button></a></li>
+            <li><a class="smoothScroll" href="#section1"><button type="button" class="btn btn-success">Register</button></a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+
+    <!-- SECTION ONE: VIDEO -->
+
+    <a name="section1">
+    <div id="seven" class="background-wrap" >
+      <video  id="sampleMovie" source src="media/HaB2016.mov" controller="false" autoplay="true" loop="loop"></video>
+      
+        <div class="special">
+          Just a sample text
+        </div>
+    </div>
+    </a>
+
+
+    <!-- SECTION TWO: DESIGNER AND ENTREPRENEUR BUTTONS -->
+    
+    <a name="section2">
+      <div id="two" class="section">
+        
+          <a class="smoothScroll" href="#section4">
+            <img src="media/design.png" height="300px"/>
+          </a>
+          <a class="smoothScroll" href="#section5">
+            <img src="media/entrepreneur.png" height="300px"/>
+          </a>
+          
+      </div>
+    </a>
+      
+
+    <!-- SECTION THREE: LOGIN -->
+
+    <a name="section3">
+    <div class="sectionForm" id="three">
+
+      <form class="form-horizontal">
+
+      <div class="form-group">
+        <div class="form-group"><div class="col-sm-offset-2 col-sm-10" id="login"><label>LOGIN</label></div></div>
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="username@example.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-6">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+      </div>
+      </form>
+      </div>
+    </a>
+
+
+  <!-- SECTION FOUR: FOR DESIGNERS -->
+    <a name="section4">
+    <div id="four" class="section">
+      Designers:
+      {{> home}}
+    </div>
+  </a>
+
+<!-- SECTION FIVE: FOR ENTREPRENEURS -->
+    <a name="section5">
+    <div id="five" class="section">
+      Entrepreneurs:
+        {{> addAdvertForm}}
+    </div>
+  </a>
+
+  <!-- SECTION ONE HTML -->
+    <a name="section6">
+    <div id="six" class="section">
+      Help
+    </div>
+  </a>
+
+  </body>
+
+  <!-- SmoothScroll.js scripts -->
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="js/smoothscroll.js"></script> -->
+
+
+
 
 
 <!-- One chunk of html, to be inserted where it says {{> hello}} -->
@@ -29,12 +153,12 @@
   		<h3>Description:</h3> {{advert.description}}
   		<h3>Business Pictures:</h3> 	<div>
   											{{#each advert.businessPix}}
-  												<img src={{this}}>
+  												<img src={{this}} style="max-width: 200px;">
   											{{/each}}
   										</div>
   		<h3>Inspiration Pictures:</h3> <div>
   											{{#each advert.inspirationPix}}
-  												<img src={{this}}>
+  												<img src={{this}} style="max-width: 200px;">
   											{{/each}}
   										</div>
         <h3>Pricing:</h3> 	<div>

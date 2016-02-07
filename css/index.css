@@ -1,0 +1,133 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+#logo{
+	text-align: left;
+	padding-left: 20px;
+}
+/* TOPBAR CSS */
+#topbar {
+	background-color:pink;
+	/*padding: 20px;*/
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right:50px;
+	text-align: right;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+}
+
+
+#topbar a{
+	padding: 10px;
+	 z-index: 1;
+}
+
+a, a:visited {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+
+/* CSS STYLING FOR ALL SECTIONS */
+.section {
+	height: 100%;
+	width: 100%;
+	padding: 4%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* CSS STYLING FOR INDIVIDUAL SECTIONS */
+#one {
+	background-color: teal;
+	padding: 0;
+	width: 100%;
+
+}
+
+video#sampleMovie {
+    position: relative;
+    z-index: 0;
+    /*background-size: 100% 100%;*/
+    margin-top: 87px;
+    /*left: 0px;*/
+    min-width: 100%;
+    /*min-height: 100%;*/
+    /*width: 1200px;*/
+    height: auto;
+
+}
+#one {
+	height:1px;
+	background-color: yellow;
+}
+
+#two {
+	background-color: yellow;
+	background-image: url("http://www.hawksrestcabins.com/wp-content/uploads/2014/06/wood-texture-abstract-hd-wallpaper-1920x1200-5488.jpg");
+
+
+}
+
+#three {
+	background-color: magenta;
+}
+#four {
+	background-color: green;
+}
+#five {
+	background-color: purple;
+}
+#six {
+	background-color: blue;
+}
+
+div nav div a img{
+	width: 40%;
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
+
+.sectionForm{
+	height: 100%;
+	width: 100%;
+	padding: 4%;
+	padding-top: 20%;
+	display: block;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.center_div{
+    margin: 0 auto;
+    width:90% /* value of your choice which suits your alignment */
+
+}
+
+#special{
+	margin-top: 50;
+}
+
+#login{
+	font-size: 50px;
+}
+
+a:hover{
+	text-decoration: none;
+}
