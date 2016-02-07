@@ -104,14 +104,8 @@ if (Meteor.isClient) {
                       id : "abc"};
 
       Requests.insert(myRequest);
-      }
-
-
-
-
+    }
   });
-
-
 
   // ~*~*~*~*~*~ EVENT HANDLING ~*~*~*~*~*~*~*~*~
   Template.home.events({
@@ -120,7 +114,103 @@ if (Meteor.isClient) {
       Session.set('counter', Session.get('counter') + 1);
     }
   });
+
+  Template.addAdvertForm.events({
+    'click .submitbutton' : function(event, template) {
+        var type = template.find('input:radio[name=toggle]:checked');
+        // Session.set("submissiontype", $(type).val());
+        // console.log("submissiontype set to " + Session.get("submissiontype"));
+        // Router.go("/");
+    },
+    'submit form': function() {
+        event.preventDefault();
+        console.log("Form submitted");
+
+        var formName = event.target.form_name.value;
+        var formEmail = event.target.form_email.value;
+        var formDescription = event.target.form_description.value;
+        var formBusinessPix = event.target.form_businessPix.value;
+        var formInspirationPix = event.target.form_inspirationPix.value;
+        var formSkills = event.target.form_skills.value;
+        console.log(formName + "\n" + formEmail + "\n" + formDescription + "\n" + formBusinessPix);
+
+        var myAdvert = {
+          title: "Recipe app for dogs",
+          description: formDescription,
+          businessPix: [formBusinessPix],
+          inspirationPix: [formInspirationPix],
+          pricing: [{price: 50, action: "Final Logo"}],
+          skills: ["Figma", "Graphic Design", formSkills]
+        }
+
+        var myRequest = {userName : formName,
+                        userEmail : formEmail,
+                        advert : myAdvert,
+                        id : "abc"};
+
+        Requests.insert(myRequest);
+        console.log("Added advert");
+        console.log(myRequest);
+
+        // if (event.target.content_text.value) { // grab the input
+        //   var input = event.target.content_text.value;
+        // } else {
+        //   var input = "";
+        // }
+            
+        // var content_type = Session.get("submissiontype"); // REPLACE
+        // if (content_type) {                       // set the content type
+        //   var type = content_type;
+        // } else {
+        //   var type = "text"; // default to text submission type
+        // }
+
+        // var raw_content_tags = $('input:checkbox:checked');
+        //     var content_tags = [];
+        //     raw_content_tags.map(function () {
+        //     content_tags.push(this.value);
+        //     });
+        // console.log("tags selected: " + content_tags);
+
+        // if (content_tags) {                       // set the feeling tags
+        //   var tags = content_tags;
+        // } else {
+        //   var tags = ""; // default to no feeling tag
+        // }
+
+        // console.log(Feelings.findOne({feeling : content_tags[0]})); // sanity check
+
+            
+        //     content_tags.forEach( function (tag) { // add content to all selected tags
+        //         if (Feelings.findOne({feeling : tag})) {
+        //             console.log(tag + " in database, pushing new element to " + tag);
+        //             Feelings.update(
+        //                 Feelings.findOne({feeling : tag})['_id'],
+        //                 { $push: { content: 
+        //                     { element : input,
+        //                         type : content_type,
+        //                         sentiment_score : 0,
+        //                     }
+        //                 }},
+        //                 {
+        //                     upsert: false,
+        //                 }
+        //             );
+        //         } else {
+        //             console.log(tag + " not in database, adding " + tag);
+        //             Feelings.insert({feeling : tag, content: [        
+        //                 { element : input,
+        //                     type : content_type,
+        //                     sentiment_score : 0,
+        //                 }]})
+        //         }
+        //     });
+    }
+  });
+
 }
+
+
 
 
 // ~*~*~*~*~*~ SERVER CODE ~*~*~*~*~*~
