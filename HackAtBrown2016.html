@@ -52,51 +52,57 @@
 
 
 <template name="addAdvertForm">
-<form class="form-horizontal">
+	<form class="form-horizontal">
 		<p>What would you like to post?</p>
 		<div class="createcontent form-group form-inline">
 			<label for="form_name" class="col-sm-2"> Your Name: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_name" id="form_name" class="form-control" placeholder="Brown Hacker"/>
-		</div>
+			<div class="col-sm-10">
+				<input type="text" name="form_name" id="form_name" class="form-control" placeholder="Brown Hacker"/>
+			</div>
 		</div>
 		<div class="createcontent form-group form-inline">
 			<label class="col-sm-2" for="form_email"> Your Email: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_email" id="form_email" class="form-control" placeholder="hack@brown.edu"/>
+			<div class="col-sm-10">
+				<input type="text" name="form_email" id="form_email" class="form-control" placeholder="hack@brown.edu"/>
+			</div>
 		</div>
+		<div class="createcontent form-group">
+			<label class="col-sm-2" for="form_title"> Advert Title: </label>
+			<div class="col-sm-10">
+				<input placeholder="Recipe app for dogs" type="text" name="form_title" id="form_title" class="form-control" />
+			</div>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_description"> Advert Description: </label>
-            <div class="col-sm-10">
-			<input placeholder="Recipe app for dogs" type="text" name="form_description" id="form_description" class="form-control" />
-		</div>
+			<div class="col-sm-10">
+				<input placeholder="I want an app to help make my dogs food" type="text" name="form_description" id="form_description" class="form-control" />
+			</div>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_businessPix"> A link to a photo of your business: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_businessPix" id="form_businessPix" placeholder="hackatbrown.org" class="form-control" />
-		</div>
+			<div class="col-sm-10">
+				<input type="text" name="form_businessPix" id="form_businessPix" placeholder="hackatbrown.org" class="form-control" />
+			</div>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_inspirationPix"> An inspiration photo: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_inspirationPix" id="form_inspirationPix" placeholder="hackatbrown.org/coolpix" class="form-control" />
-		</div>
+			<div class="col-sm-10">
+				<input type="text" name="form_inspirationPix" id="form_inspirationPix" placeholder="hackatbrown.org/coolpix" class="form-control" />
+			</div>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_pricing"> Pricing: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_pricing" id="form_pricing" class="form-control" placeholder="$50 for cool stuff"/>
-		</div>
+			<div class="col-sm-10">
+				<input type="text" name="form_pricing" id="form_pricing" class="form-control" placeholder="$50 for cool stuff"/>
+			</div>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_skills"> Skills Needed: </label>
-            <div class="col-sm-10">
-			<input type="text" name="form_skills" id="form_skills" class="form-control" placeholder="You HAVE to love dogs. And recipes. And apps."/>
+			<div class="col-sm-10">
+				<input type="text" name="form_skills" id="form_skills" class="form-control" placeholder="You HAVE to love dogs. And recipes. And apps."/>
+			</div>
 		</div>
-		</div>
-	
+
 		<button class="btn btn-default submitbutton">Submit</button>
 	</form>
 </template>

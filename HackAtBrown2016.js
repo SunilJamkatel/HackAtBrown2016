@@ -124,18 +124,17 @@ if (Meteor.isClient) {
     },
     'submit form': function() {
         event.preventDefault();
-        console.log("Form submitted");
 
         var formName = event.target.form_name.value;
         var formEmail = event.target.form_email.value;
+        var formTitle = event.target.form_title.value;
         var formDescription = event.target.form_description.value;
         var formBusinessPix = event.target.form_businessPix.value;
         var formInspirationPix = event.target.form_inspirationPix.value;
         var formSkills = event.target.form_skills.value;
-        console.log(formName + "\n" + formEmail + "\n" + formDescription + "\n" + formBusinessPix);
 
         var myAdvert = {
-          title: "Recipe app for dogs",
+          title: formTitle
           description: formDescription,
           businessPix: [formBusinessPix],
           inspirationPix: [formInspirationPix],
