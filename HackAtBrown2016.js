@@ -115,6 +115,26 @@ if (Meteor.isClient) {
         // console.log("submissiontype set to " + Session.get("submissiontype"));
         // Router.go("/");
     },
+  'blur #form_pricingPrice': function() {
+    var priceVal = event.target.value;
+    var priceInputsElem = document.getElementById("price-inputs");
+    var priceWarningElem = document.getElementById("price-warning");
+    if (isNaN(priceVal)) {
+        if (!priceInputsElem.classList.contains("has-error")) {
+            priceInputsElem.classList.add("has-error");
+            priceWarningElem.classList.remove("hidden");
+            console.log(priceInputsElem.classList);
+            console.log(priceWarningElem.classList);
+        }
+    } else {
+        if (priceInputsElem.classList.contains("has-error")) {
+            priceInputsElem.classList.remove("has-error");
+            priceWarningElem.classList.add("hidden");
+            console.log(priceInputsElem.classList);
+            console.log(priceWarningElem.classList);
+        }
+    }
+},
     'submit form': function() {
         event.preventDefault();
 
@@ -145,7 +165,6 @@ if (Meteor.isClient) {
         Requests.insert(myRequest);
     }
   });
-
 }
 
 
