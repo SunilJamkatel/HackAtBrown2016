@@ -15,6 +15,7 @@
 
   	<link rel="stylesheet" href="css/index.css">
 
+	<link rel="icon" type="image/png" sizes="16x16" href="DN.png">
   </head>
 
 
@@ -53,7 +54,6 @@
 
       <div id="two" class="section">
       	    <h1 id="title">Let's get started. I'm a...</h1>
-        	<br>
         	<div>
 	       		 <a href="#section4">
 		         	<img src="designer_button.png" height="300px" onmouseover="this.src='designer.png';" onmouseout="this.src= 'designer_button.png';"/>
@@ -61,7 +61,6 @@
 		         <a href="#section5">
 		      	   <img src="entrepreneur_button.png" height="300px" onmouseover="this.src='entrepreneur.png';" onmouseout="this.src= 'entrepreneur_button.png';"/>
 		         </a>
-
         	</div>
           
       </div>
@@ -109,16 +108,23 @@
 
   <!-- SECTION FOUR: FOR DESIGNERS -->
     <a name="section4">
+    	<div style="clear: left; margin: 0 auto; text-align: center;" class="header">
+      		<h1>Browse available jobs:</h1>
+        </div>
     <div id="four" class="section">
       <!-- Designers: -->
       {{> home}}
     </div>
   </a>
 
+  <a name="section8">
+  	<div id="eight">
+  	</div>
+  </a>
+
 <!-- SECTION FIVE: FOR ENTREPRENEURS -->
     <a name="section5">
     <div id="five" class="section">
-      Entrepreneurs:
       {{> addAdvertForm}}
     </div>
   </a>
@@ -127,18 +133,20 @@
     <a name="section6">
     <div id="six" class="section">
     	<div id="faq">
-    		<h1>What about money?</h1>
-			<h5>Entrepreneurs will post the price in which they will pay for the design work. Payments will be made through Paypal on our website. </h5>
+    		<h1 class="black-heading">What about money?</h1>
+			<h5 class="black-heading">Entrepreneurs will post the price in which they will pay for the design work. Payments will be made through Paypal on our website. </h5>
 			<br>
-			<h1>Why should I use Designeur?</h1>
-			<h5> Entrepreneur: You can connect with talented designers around the globe! Post an request of any kind of work that you need, and a designer can easily find you to connect. Or, you can search through thousands of portfolios on our site to connect with a specific designer that you want.</h5>
-			<h5>Designer: Entrepreneur makes commisions easy! Search through different requests for design work to find exactly what you want to work on. </h5> 
+			<h1 class="black-heading">Why should I use Designeur?</h1>
+			<h5 class="black-heading"> Entrepreneur: You can connect with talented designers around the globe! Post an request of any kind of work that you need, and a designer can easily find you to connect. Or, you can search through thousands of portfolios on our site to connect with a specific designer that you want.</h5>
+			<h5 class="black-heading">Designer: Entrepreneur makes commisions easy! Search through different requests for design work to find exactly what you want to work on. </h5> 
     	</div>
+    </div>
+  </a>
+  	<div style="text-align: center;">
         <a href="https://mail.google.com/mail/#inbox">email</a>
 	    <a href="https://www.facebook.com/profile.php?id=100011330375365">like us on facebook</a>
 	    <a href="https://twitter.com/designeur_co">follow us on twitter</a>
-    </div>
-  </a>
+	</div>
 
   </body>
 
@@ -149,13 +157,15 @@
 <!-- One chunk of html, to be inserted where it says {{> hello}} -->
 
 <template name="home">
-	{{#each requests}} <!-- This code makes all of the advertisements posted show up! -->
-	    {{> advertEntry}}
-	{{/each}}
+	<div style="clear : left;" id="allAdverts">
+		{{#each requests}} <!-- This code makes all of the advertisements posted show up! -->
+		    {{> advertEntry}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="advertEntry"> <!-- This code covers one single advert entry -->
-  	<div>
+  	<div style="display: block; border-radius: 25px; background-color: #F7F7F7; margin: 30px; padding: 30px;">
   		<h1 class="advert"> Name: {{userName}}</h1>
   		<h2 class="advert">Email: {{userEmail}}</h2>
   		<h3 class="advert">{{advert.title}}</h3>
@@ -187,7 +197,8 @@
 
 <template name="addAdvertForm">
 	<form class="form-horizontal">
-		<h5>What would you like to post?</h5>
+		<h1>Your an entrepreneur. You have a great idea, but need help coming up with a design. <strong> That's where we come in. </strong>
+        </h1>
 		<div class="createcontent form-group form-inline">
 			<label for="form_name" class="col-sm-2"> Your Name: </label>
 			<div class="col-sm-10">

@@ -86,20 +86,28 @@ video#sampleMovie {
 	background-color: #73B1B7;
 }
 #four {
-	background-color: green;
-	background-image: url("http://orig14.deviantart.net/816d/f/2011/133/c/3/tepig_tile_background_by_buizelknight-d3gacfj.png");
-	background-repeat: repeat;
+	height: auto;
+	background-color: #E0E0E0;
+	/*background-image: url("http://orig14.deviantart.net/816d/f/2011/133/c/3/tepig_tile_background_by_buizelknight-d3gacfj.png");
+	background-repeat: repeat;*/
 }
 #five {
-	background-color: purple;
-	background-image: url("http://www.discerninggent.com/wp-content/uploads/2016/01/David-Gandy-Marks-and-Spencer-Fall-Winter-2014-Campaign-001.jpg");
+	background-color: #E0E0E0;
+	/*background-image: url("http://www.discerninggent.com/wp-content/uploads/2016/01/David-Gandy-Marks-and-Spencer-Fall-Winter-2014-Campaign-001.jpg");*/
 
 }
 #six {
-	background-color: blue;
+	background-color: #73A1B7;
 }
 
+#eight {
+	background-color: #73B1B7;
+	height: 20px;
+}
 
+#allAdverts {
+	clear : left;
+}
 
 div nav div a img{
 	width: 40%;
@@ -150,10 +158,14 @@ form{
 #title {
 	font-size: 30px;
 	font-family: 'Quicksand','Open Sans', sans-serif;
-	font-color: ;
+	font-color: #73B1B7;
 	text-decoration: none;
 }
 
 #title:hover {
 	text-decoration: none;
 }
+.black-heading {
+	color: black !important;
+}
+
