@@ -7,31 +7,32 @@
     <meta name="viewport" content="initial-scale=1"> -->
 
     <!-- Linking the CSS stylesheets -->
-    
-    <link rel="stylesheet" href="css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     
     <!-- ??? Emma's stylesheet ??? -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-  	  <!-- SmoothScroll.js scripts -->
+  	<link rel="stylesheet" href="css/index.css">
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/smoothscroll.js"></script>
   </head>
 
 
   <body>
 
-    <!-- TOP BAR HTML -->    
+    <!-- TOP BAR HTML -->   
+    <div>
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </div> 
+
+
     <div class="navbar transparent  navbar-default navbar-fixed-top">
     <nav class="navbar-inner" >
       <div class="container">
-        <a class="pull-left smoothScroll" href="#section1"><img src="media/logo.png"/></a>
+        <a class="pull-left" href="#section1"><img src="logo.png"/></a>
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="smoothScroll" href="#section3"><button type="button" class="btn btn-primary">Login</button></a></li>
-            <li><a class="smoothScroll" href="#section1"><button type="button" class="btn btn-success">Register</button></a></li>
+            <li><a href="#section3"><button type="button" class="btn btn-primary">Login</button></a></li>
+            <li><a href="#section1"><button type="button" class="btn btn-success">Register</button></a></li>
         </ul>
       </div>
     </nav>
@@ -41,11 +42,7 @@
 
     <a name="section1">
     <div id="seven" class="background-wrap" >
-      <video  id="sampleMovie" source src="media/HaB2016.mov" controller="false" autoplay="true" loop="loop"></video>
-      
-        <div class="special">
-          Just a sample text
-        </div>
+      <video  id="sampleMovie" source src="Hab2016.mov" controller="false" autoplay="true" loop="loop"></video>
     </div>
     </a>
 
@@ -53,14 +50,19 @@
     <!-- SECTION TWO: DESIGNER AND ENTREPRENEUR BUTTONS -->
     
     <a name="section2">
+
       <div id="two" class="section">
-        
-          <a class="smoothScroll" href="#section4">
-            <img src="media/design.png" height="300px"/>
-          </a>
-          <a class="smoothScroll" href="#section5">
-            <img src="media/entrepreneur.png" height="300px"/>
-          </a>
+      	    <h1 id="title">Let's get started. I'm a...</h1>
+        	<br>
+        	<div>
+	       		 <a href="#section4">
+		         	<img src="designer_button.png" height="300px" onmouseover="this.src='designer.png';" onmouseout="this.src= 'designer_button.png';"/>
+		         </a>
+		         <a href="#section5">
+		      	   <img src="entrepreneur_button.png" height="300px" onmouseover="this.src='entrepreneur.png';" onmouseout="this.src= 'entrepreneur_button.png';"/>
+		         </a>
+
+        	</div>
           
       </div>
     </a>
@@ -108,7 +110,7 @@
   <!-- SECTION FOUR: FOR DESIGNERS -->
     <a name="section4">
     <div id="four" class="section">
-      Designers:
+      <!-- Designers: -->
       {{> home}}
     </div>
   </a>
@@ -117,28 +119,35 @@
     <a name="section5">
     <div id="five" class="section">
       Entrepreneurs:
-        {{> addAdvertForm}}
+      {{> addAdvertForm}}
     </div>
   </a>
 
   <!-- SECTION ONE HTML -->
     <a name="section6">
     <div id="six" class="section">
-      Help
+    	<div id="faq">
+    		<h1>What about money?</h1>
+			<h5>Entrepreneurs will post the price in which they will pay for the design work. Payments will be made through Paypal on our website. </h5>
+			<br>
+			<h1>Why should I use Designeur?</h1>
+			<h5> Entrepreneur: You can connect with talented designers around the globe! Post an request of any kind of work that you need, and a designer can easily find you to connect. Or, you can search through thousands of portfolios on our site to connect with a specific designer that you want.</h5>
+			<h5>Designer: Entrepreneur makes commisions easy! Search through different requests for design work to find exactly what you want to work on. </h5> 
+    	</div>
+        <a href="https://mail.google.com/mail/#inbox">email</a>
+	    <a href="https://www.facebook.com/profile.php?id=100011330375365">like us on facebook</a>
+	    <a href="https://twitter.com/designeur_co">follow us on twitter</a>
     </div>
   </a>
 
   </body>
-
-  <!-- SmoothScroll.js scripts -->
-  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-  <!-- <script type="text/javascript" src="js/smoothscroll.js"></script> -->
 
 
 
 
 
 <!-- One chunk of html, to be inserted where it says {{> hello}} -->
+
 <template name="home">
 	{{#each requests}} <!-- This code makes all of the advertisements posted show up! -->
 	    {{> advertEntry}}
@@ -147,28 +156,29 @@
 
 <template name="advertEntry"> <!-- This code covers one single advert entry -->
   	<div>
-  		<h1> Name: {{userName}}</h1>
-  		<h2>Email: {{userEmail}}</h2>
-  		<h3>Title:</h3> {{advert.title}}
-  		<h3>Description:</h3> {{advert.description}}
-  		<h3>Business Pictures:</h3> 	<div>
-  											{{#each advert.businessPix}}
-  												<img src={{this}} style="max-width: 200px;">
-  											{{/each}}
-  										</div>
-  		<h3>Inspiration Pictures:</h3> <div>
-  											{{#each advert.inspirationPix}}
-  												<img src={{this}} style="max-width: 200px;">
-  											{{/each}}
-  										</div>
-        <h3>Pricing:</h3> 	<div>
+  		<h1 class="advert"> Name: {{userName}}</h1>
+  		<h2 class="advert">Email: {{userEmail}}</h2>
+  		<h3 class="advert">{{advert.title}}</h3>
+  		<h4 class="advert">{{advert.description}}</h4>
+  		<div>
+			{{#each advert.businessPix}}
+				<img src={{this}} style="max-width: 200px;">
+			{{/each}}
+		</div>
+  		<h3 class="advert">Inspiration:</h3>
+  			<div>
+				{{#each advert.inspirationPix}}
+					<img src={{this}} style="max-width: 200px;">
+				{{/each}}
+			</div>
+        <h3 class="advert">Pricing:</h3> 	<div>
         						{{#each advert.pricing}}
         							<h4> Costs: {{price}} Please do: {{action}}</h4>
         						{{/each}}
         					</div>
-        <h3>Skills:</h3> <div>
+        <h3 class="advert">Skills Needed:</h3> <div>
         					{{#each advert.skills}}
-                            {{this}}.
+                           	 {{this}}.
         					{{/each}}
         				</div>
   	</div>

@@ -4,9 +4,10 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', 'Raleway', 'Open Sans', sans-serif;
 	height: 100%;
 	width: 100%;
+	color:white !important;
 }
 
 #logo{
@@ -16,7 +17,6 @@ body {
 /* TOPBAR CSS */
 #topbar {
 	background-color:pink;
-	/*padding: 20px;*/
 	padding-top: 20px;
 	padding-bottom: 10px;
 	padding-right:50px;
@@ -76,24 +76,30 @@ video#sampleMovie {
 }
 
 #two {
-	background-color: yellow;
-	background-image: url("http://www.hawksrestcabins.com/wp-content/uploads/2014/06/wood-texture-abstract-hd-wallpaper-1920x1200-5488.jpg");
-
-
+	background-color: #E8E8E8;
+	/*background-image: url("http://wet-customboards.com/wp-content/uploads/2015/05/white-wood-background.jpg");
+	opacity: 0.9;
+	filter: alpha(opacity=90); */
 }
 
 #three {
-	background-color: magenta;
+	background-color: #73B1B7;
 }
 #four {
 	background-color: green;
+	background-image: url("http://orig14.deviantart.net/816d/f/2011/133/c/3/tepig_tile_background_by_buizelknight-d3gacfj.png");
+	background-repeat: repeat;
 }
 #five {
 	background-color: purple;
+	background-image: url("http://www.discerninggent.com/wp-content/uploads/2016/01/David-Gandy-Marks-and-Spencer-Fall-Winter-2014-Campaign-001.jpg");
+
 }
 #six {
 	background-color: blue;
 }
+
+
 
 div nav div a img{
 	width: 40%;
@@ -129,5 +135,25 @@ div nav div a img{
 }
 
 a:hover{
+	color:white;
+}
+
+form{
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 3px;
+}
+
+#imgbtn1:hover{
+	background-image: "media/designbutton.png"
+}
+
+#title {
+	font-size: 30px;
+	font-family: 'Quicksand','Open Sans', sans-serif;
+	font-color: ;
+	text-decoration: none;
+}
+
+#title:hover {
 	text-decoration: none;
 }
