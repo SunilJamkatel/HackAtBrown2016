@@ -1,29 +1,22 @@
 <head>
-  <title>myproject</title>
+  <title>Designeur</title>
 </head>
 
 <body>
   <h1>Welcome to Design Space!</h1>
-
-  {{> home}} <!-- This inserts everything in the template named "hello" here! -->
+  {{> home}} <!-- This inserts everything in the template named "home" here! -->
 </body>
 
 
 
 <!-- One chunk of html, to be inserted where it says {{> hello}} -->
 <template name="home">
-  <button>Post an Idea!</button>
-  <p>You've pressed the button {{counter}} times.</p>
-  {{addData}}
-  <ul>
-  	{{#each requests}}
-        {{> advertEntry}}
-    {{/each}}
-  </ul>
+	{{#each requests}} <!-- This code makes all of the advertisements posted show up! -->
+	    {{> advertEntry}}
+	{{/each}}
 </template>
 
-<template name="advertEntry">
-  <li>
+<template name="advertEntry"> <!-- This code covers one single advert entry -->
   	<div>
   		<h1> Name: {{userName}}</h1>
   		<h2>Email: {{userEmail}}</h2>
@@ -50,5 +43,4 @@
         					{{/each}}
         				</div>
   	</div>
-  </li>
 </template>
