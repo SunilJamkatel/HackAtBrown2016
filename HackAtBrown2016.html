@@ -90,7 +90,7 @@
 				<input type="text" name="form_inspirationPix" id="form_inspirationPix" placeholder="hackatbrown.org/coolpix" class="form-control" />
 			</div>
 		</div>
-		<div class="createcontent form-group">
+		<div class="createcontent form-group has-error" id="price-inputs">
 			<label class="col-sm-2" for="form_pricingPrice"> Price ($): </label>
 			<div class="col-sm-2">
 				<input type="text" name="form_pricingPrice" id="form_pricingPrice" class="form-control" placeholder="50"/>
@@ -98,7 +98,8 @@
 			<label class="col-sm-1" for="form_pricingDescription"> for: </label>
 			<div class="col-sm-7">
 				<input type="text" name="form_pricingDescription" id="form_pricingDescription" class="form-control" placeholder="an awesome logo"/>
-			</div>
+            </div>
+            <span id="price-warning" class="hidden help-block">Price must be a number</span>
 		</div>
 		<div class="createcontent form-group">
 			<label class="col-sm-2" for="form_skills"> Skills Needed: </label>
@@ -106,7 +107,6 @@
 				<input type="text" name="form_skills" id="form_skills" class="form-control" placeholder="You HAVE to love dogs. And recipes. And apps."/>
 			</div>
 		</div>
-
 		<button class="btn btn-default submitbutton">Submit</button>
 	</form>
 </template>
