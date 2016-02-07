@@ -124,6 +124,8 @@ if (Meteor.isClient) {
         var formDescription = event.target.form_description.value;
         var formBusinessPix = event.target.form_businessPix.value;
         var formInspirationPix = event.target.form_inspirationPix.value;
+        var formPricingPrice = event.target.form_pricingPrice.value;
+        var formPricingDescription = event.target.form_pricingDescription.value;
         var formSkills = event.target.form_skills.value;
 
         var myAdvert = {
@@ -131,7 +133,7 @@ if (Meteor.isClient) {
           description: formDescription,
           businessPix: [formBusinessPix],
           inspirationPix: [formInspirationPix],
-          pricing: [{price: 50, action: "Final Logo"}],
+          pricing: [{price: formPricingPrice, action: formPricingDescription}],
           skills: ["Figma", "Graphic Design", formSkills]
         }
 
