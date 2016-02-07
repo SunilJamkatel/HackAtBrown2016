@@ -134,7 +134,7 @@ if (Meteor.isClient) {
         var formSkills = event.target.form_skills.value;
 
         var myAdvert = {
-          title: formTitle
+          title: formTitle,
           description: formDescription,
           businessPix: [formBusinessPix],
           inspirationPix: [formInspirationPix],

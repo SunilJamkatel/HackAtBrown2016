@@ -53,7 +53,7 @@
 
 <template name="addAdvertForm">
 	<form class="form-horizontal">
-		<p>What would you like to post?</p>
+		<h5>What would you like to post?</h5>
 		<div class="createcontent form-group form-inline">
 			<label for="form_name" class="col-sm-2"> Your Name: </label>
 			<div class="col-sm-10">
@@ -91,9 +91,13 @@
 			</div>
 		</div>
 		<div class="createcontent form-group">
-			<label class="col-sm-2" for="form_pricing"> Pricing: </label>
-			<div class="col-sm-10">
-				<input type="text" name="form_pricing" id="form_pricing" class="form-control" placeholder="$50 for cool stuff"/>
+			<label class="col-sm-2" for="form_pricing_price"> Price ($): </label>
+			<div class="col-sm-2">
+				<input type="text" name="form_pricing_price" id="form_pricing_price" class="form-control" placeholder="50"/>
+			</div>
+			<label class="col-sm-1" for="form_pricing_description"> for: </label>
+			<div class="col-sm-7">
+				<input type="text" name="form_pricing_description" id="form_pricing_description" class="form-control" placeholder="an awesome logo"/>
 			</div>
 		</div>
 		<div class="createcontent form-group">
