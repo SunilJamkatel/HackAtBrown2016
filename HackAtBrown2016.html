@@ -4,6 +4,7 @@
 
 <body>
   <h1>Welcome to Design Space!</h1>
+  {{> addAdvertForm}}
   {{> home}} <!-- This inserts everything in the template named "home" here! -->
 </body>
 
@@ -11,6 +12,7 @@
 
 <!-- One chunk of html, to be inserted where it says {{> hello}} -->
 <template name="home">
+	{{addData}}
 	{{#each requests}} <!-- This code makes all of the advertisements posted show up! -->
 	    {{> advertEntry}}
 	{{/each}}
@@ -43,4 +45,29 @@
         					{{/each}}
         				</div>
   	</div>
+</template>
+
+
+<template name="addAdvertForm">
+	<form>
+		<div >What would you like to post?</div>
+		<div class="createcontent">
+			<h5> Your Name: </h5>
+			<input type="text" name="form_name" />
+			<h5> Your Email: </h5>
+			<input type="text" name="form_email" />
+			<h5> Advert Description: </h5>
+			<input type="text" name="form_description" />
+			<h5> A photo of your business: </h5>
+			<input type="text" name="form_businessPix" />
+			<h5> An inspiration photo: </h5>
+			<input type="text" name="form_inspirationPix" />
+			<h5> Pricing: </h5>
+			<input type="text" name="form_pricing" />
+			<h5> Skills Needed: </h5>
+			<input type="text" name="form_skills" />
+		</div>
+	
+		<button class="submitbutton">Submit</button>
+	</form>
 </template>

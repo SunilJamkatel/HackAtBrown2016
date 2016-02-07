@@ -94,8 +94,8 @@ if (Meteor.isClient) {
         description: "Helps me find good recipes for my dogs. Yay!",
         businessPix: ["https://i.ytimg.com/vi/8M7Qie4Aowk/hqdefault.jpg"],
         inspirationPix: ["http://www.healthwisepetfood.com/system/images/BAhbBlsHOgZmIlgyMDEyLzA5LzEyLzIwXzMwXzAyXzY4NV9IZWFsdGhXaXNlX0xhbWJfTWVhbF9PYXRtZWFsX0Zvcm11bGFfQWR1bHRfRHJ5X0RvZ19Gb29kLmpwZw/HealthWise_Lamb_Meal_Oatmeal_Formula_Adult_Dry_Dog_Food.jpg"],
-        pricing: [{price: 50, action: "For the goodz"}],
-        skills: ["Figma", "Loves Dogs"]
+        pricing: [{price: 50, action: "Final Logo"}],
+        skills: ["Figma", "Graphic Design"]
       }
 
       var myRequest = {userName : "Emma",
