@@ -3,12 +3,52 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Welcome to Design Space!</h1>
 
-  {{> hello}}
+  {{> home}} <!-- This inserts everything in the template named "hello" here! -->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
+
+
+<!-- One chunk of html, to be inserted where it says {{> hello}} -->
+<template name="home">
+  <button>Post an Idea!</button>
   <p>You've pressed the button {{counter}} times.</p>
+  {{addData}}
+  <ul>
+  	{{#each requests}}
+        {{> advertEntry}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="advertEntry">
+  <li>
+  	<div>
+  		<h1> Name: {{userName}}</h1>
+  		<h2>Email: {{userEmail}}</h2>
+  		<h3>Title:</h3> {{advert.title}}
+  		<h3>Description:</h3> {{advert.description}}
+  		<h3>Business Pictures:</h3> 	<div>
+  											{{#each advert.businessPix}}
+  												<img src={{this}}>
+  											{{/each}}
+  										</div>
+  		<h3>Inspiration Pictures:</h3> <div>
+  											{{#each advert.inspirationPix}}
+  												<img src={{this}}>
+  											{{/each}}
+  										</div>
+        <h3>Pricing:</h3> 	<div>
+        						{{#each advert.pricing}}
+        							<h4> Costs: {{price}} Please do: {{action}}</h4>
+        						{{/each}}
+        					</div>
+        <h3>Skills:</h3> <div>
+        					{{#each advert.skills}}
+        						{{this}}
+        					{{/each}}
+        				</div>
+  	</div>
+  </li>
 </template>
